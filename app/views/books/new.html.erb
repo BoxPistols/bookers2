@@ -1,5 +1,8 @@
 <h1>New Book</h1>
 <p>新規投稿</p>
+
+<span><%= link_to "Bookers", books_path %></span>
+
 <%= form_with model: @book, url:'/books', local:true do |f| %>
   <h4>タイトル</h4>
   <%# <%= f.label :title %>
@@ -7,5 +10,9 @@
   <h4>本文</h4>
   <%# <%= f.label :body %>
   <%= f.text_area :body %>
+  <%# 画像 Refile %>
+  <h4>画像</h4>
+  <%= f.attachment_field :image %>
+  
   <%= f.submit '投稿' %>
 <% end %>
