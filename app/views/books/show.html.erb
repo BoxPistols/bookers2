@@ -2,13 +2,16 @@
 
 <span><%= link_to "Bookers", books_path %></span>
 
+<h2>Title</h2>
 <p><%= @book.title %></p>
 <h2>本文</h2>
 <p><%= @book.body %></p>
 <%# Refile画像 %>
 <p>画像</p>
-<%= attachment_image_tag @list, :image, format: 'jpeg', size: "300x300" %>
+<%= attachment_image_tag @book, :image, format: 'jpeg', size: "300x300" %>
 
-<%= link_to "編集", edit_book_path(@book.id) %>
-<%= link_to "削除", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
-
+<%# ログインユーザー自身が投稿したものしか編集出来ないようにする %>
+<% if @book.user == current_user %>
+  <%= link_to "編集", edit_book_path(@book.id) %>
+  <%= link_to "削除", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
+<% end %>

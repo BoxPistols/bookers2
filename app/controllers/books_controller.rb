@@ -12,6 +12,8 @@ class BooksController < ApplicationController
   # 投稿データの保存
   def create
     @book = Book.new(book_params) # ストロングパラメーター
+    # アソシエーションを設定
+    @book.user_id = current_user.id
     if @book.save
       redirect_to book_path(@book.id)
     else
