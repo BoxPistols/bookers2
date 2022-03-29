@@ -1,2 +1,7 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h1>Books</h1>
+<p>投稿一覧</p>
+<% @books.each do |book| %>
+  <p>タイトル</p>
+  <span><%= book.title %></span>
+  <span><%= book.body %></span>
+<% end %>
