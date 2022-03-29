@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  root to: 'homes#top'
+  root to: 'homes#top', as: "top"
 
   # get 'books/index'
   get 'books' => 'books#index'
@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   post 'books' => 'books#create'
 
   # show 詳細画面
-  get 'books/:id' => 'books#show'
-  # get 'books/:id' => 'books#show', as: "book"
+  # get 'books/:id' => 'books#show'
+  get 'books/:id' => 'books#show', as: "book"
 
   # edit 編集画面
   # get 'books/:id/edit' => 'books#edit', as: "edit_book"
