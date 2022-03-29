@@ -12,8 +12,11 @@ class BooksController < ApplicationController
   # 投稿データの保存
   def create
     @book = Book.new(book_params) # ストロングパラメーター
-    @book.save
-    redirect_to book_path(book.id)
+    if @book.save
+      redirect_to book_path(@book.id)
+    else
+      render :new
+    end
   end
 
   def show
