@@ -14,4 +14,17 @@
  *= require_self
  */
 
- @import "bootstrap";
+@import "bootstrap";
+
+ul.navbar-nav li {
+  padding: 4px 8px;
+}
+
+.bg-dark {
+  a {
+    color: #fff;
+    &:hover {
+      color: var(--blue);
+    }
+  }
+}
