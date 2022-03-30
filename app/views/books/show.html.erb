@@ -1,6 +1,12 @@
+<div class="row">
+  <div class="col-md-3">
+      <%= render 'users/user-info', books: @books %>
+  </div>
+  <div class="col-md-9">
+    
+
 <h2>タイトル</h2>
 
-<hr/>
 
 <span><%= link_to "Bookers", books_path %></span>
 
@@ -15,7 +21,7 @@
 <p><%= @book.body %></p>
 <%# Refile画像 %>
 <p>画像</p>
-<%= att`achment_image_tag @book, :image, format: 'jpeg', size: "300x300" %>
+<%= attachment_image_tag @book, :image, format: 'jpeg', size: "300x300" %>
 
 <hr/>
 
@@ -24,3 +30,6 @@
   <%= link_to "編集", edit_book_path(@book.id) %>
   <%= link_to "削除", destroy_book_path(@book.id), method: :delete, "data-confirm" => "本当に削除しますか？" %>
 <% end %>
+
+  </div>
+</div>

@@ -18,6 +18,7 @@ class BooksController < ApplicationController
       redirect_to book_path(@book.id)
     else
       render :new
+      # redirect_to books_path
     end
   end
 
@@ -50,6 +51,6 @@ class BooksController < ApplicationController
   private
   
   def book_params
-    params.require(:book).permit(:title, :body, :profile_image１１)
+    params.require(:book).permit(:title, :body, :image)
   end
 end

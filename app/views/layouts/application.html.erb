@@ -25,45 +25,43 @@
                 <li>
                   <%= link_to 'Home', user_path(current_user.id) %>
                 </li>
-                <%# <li>
-                  <a class="fas fa-users nav-link text-light" href="/users">
-                    Users</a>
-                </li> %>
                 <li>
-                  <%= link_to '投稿フォーム', new_book_path %>
+                  <%= link_to 'Users', users_path %>
                 </li>
                 <li>
                   <%= link_to "Books", books_path %>
                 </li>
                 <li>
+                  <%= link_to '投稿フォーム', new_book_path %>
+                </li>
+                <%# <li>
+                  <%= link_to 'マイページ', user_path(current_user.id) 
+                </li> %>
+                <li>
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                 </li>
                 <li>
-                  <%= link_to 'Users', users_path %>
-                </li>
-                <%# ログイン前 %>
-                <li>
-                  <%= link_to 'マイページ', user_path(current_user.id) %>
-                </li>
-                <%# ログイン前 %>
-              <% else %>
-                <li>
-                  <%= link_to "新規登録", new_user_registration_path %>
-                </li>
-                <li>
-                  <%= link_to "ログイン", new_user_session_path %>
-                </li>
-              <% end %>
-            </ul>
+                  <%# ログイン前 %>
+                <% else %>
+                  <li>
+                    Home
+                  </li>
+                  <li>
+                    <%= link_to "新規登録", new_user_registration_path %>
+                  </li>
+                  <li>
+                    <%= link_to "ログイン", new_user_session_path %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
-    </header>
-    <%# Container %>
-    <div class="container pd-2 px-sm-0">
-      
-          <%= yield %>        
-      
-    </div>
+        </nav>
+      </header>
+      <%# Container %>
+      <div class="container pd-2 px-sm-0">
+        <%= yield %>
+      </div>
+    </body>
   </body>
 </html>
