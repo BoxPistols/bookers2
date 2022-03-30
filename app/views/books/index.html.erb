@@ -1,11 +1,16 @@
 <h1>Books</h1>
 <h2>投稿一覧</h2>
 
+<%# TOPぽ %>
 <div><%= link_to "top", top_path %></div>
 <span><%= link_to "New Create", new_book_path %></span>
 
+<%# 総合一覧画面、複数のユーザーが混在。 %>
 <% @books.each do |book| %>
   <p>ユーザーネーム：<%= book.user.name %></p>
+  <p><%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, class:
+"rad", format: 'jpeg', fallback: "http://placehold.jp/100x100.jpg?text=Profile" %></p>
+  
   <p>タイトル</p>  
   <%# <%= link_to book.title, "/books/#{book.id}" %>
   <span><%= link_to book.title, book_path(book.id) %></span>
