@@ -39,6 +39,10 @@
                   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
                 </li>
                 <li>
+                  <%= link_to 'Users', users_path %>
+                </li>
+                <%# ログイン前 %>
+                <li>
                   <%= link_to 'マイページ', user_path(current_user.id) %>
                 </li>
                 <%# ログイン前 %>
@@ -56,7 +60,7 @@
       </nav>
     </header>
     <%# Container %>
-    <div class="container px-5 px-sm-0">
+    <div class="container pd-2 px-sm-0">
       
           <%= yield %>        
       
