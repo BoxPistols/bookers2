@@ -67,3 +67,7 @@ gem 'devise'
 # 画像アップロード
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
+
+# CSSフレームワーク
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
