@@ -1,0 +1,19 @@
+<%# 総合一覧画面、複数のユーザーが混在する %>
+<% books.each do |book| %>
+  <p>ユーザーネーム：<%= book.user.name %></p>
+  <p><%= attachment_image_tag book.user, :profile_image, :fill, 60, 60, class:
+"rad", format: 'jpeg', fallback: "http://placehold.jp/100x100.jpg?text=Profile" %></p>
+  
+  <p>タイトル</p>  
+  <%# <%= link_to book.title, "/books/#{book.id}" %>
+  <span><%= link_to book.title, book_path(book.id) %></span>
+  <p>本文</p>  
+  <span><%= book.body %></span>
+  <%# Refile画像 %>
+  <%= link_to book_path(book.id) do %>
+  <div>
+    <%= attachment_image_tag book, :image, :fill, 100, 100, format: 'jpeg' %>
+  </div>
+  <% end %>
+  <hr/>
+<% end %>
