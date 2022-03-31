@@ -1,35 +1,36 @@
 <div class="flash">
-<% flash.each do |key, value| %>
-  <%= content_tag(:div, value, class: "#{key}") %>
-<% end %>
+    <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, class: "#{key}") %>
+    <% end %>
 </div>
 
+<div class="m-auto">
 
-<h2>User info</h2>
-<div class="">
-  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg',
-    fallback: "http://placehold.jp/100x100.jpg?text=Profile" %>
-</div>
+    <h2>User info</h2>
+    <div class="">
+        <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, format: 'jpeg',
+        fallback: "http://placehold.jp/100x100.jpg?text=Profile" %>
+    </div>
 
-<div class="">
-  name:
-  <%= current_user.name %>
-</div>
+    <div class="">
+        name:<%= current_user.name %>
+    </div>
 
-<div
-  class="">
-  <%# edit_user_path(@user) %>
-  <%= link_to 'マイページ編集', edit_user_path(current_user.id), class: "btn btn-success" %>
-</div>
-<%# <div class="">
-      <%= link_to "新規投稿", new_book_path %>
-<%#  %>
-<h1>New book</h1>
-<%= form_with model: @books, url: books_path, local:true do |f| %>
-  <p>Title</p>
-  <%= f.text_field :title , class: "edit-title"%>
-  <p>Body</p>
-  <%= f.text_area :body, class: "edit-body"%>
-  <br>
-    <%= f.submit 'Create Book', class: "btn btn-success" %>
-<% end %>
+    <div class="">
+        <%# edit_user_path(@user) %>
+            <%= link_to 'マイページ編集', edit_user_path(current_user.id), class: "btn btn-success"
+            %>
+        </div>
+        <%# <div class="">
+  <%= link_to "新規投稿", new_book_path %>
+            <%#  %>
+                <h1>New book</h1>
+                <%= form_with model: @books, url: books_path, local:true do |f| %>
+                <p>Title</p>
+                <%= f.text_field :title , class: "edit-title"%>
+                <p>Body</p>
+                <%= f.text_area :body, class: "edit-body"%>
+                <br>
+                <%= f.submit 'Create Book', class: "btn btn-success" %>
+            <% end %>
+        </div>

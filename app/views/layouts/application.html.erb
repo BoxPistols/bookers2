@@ -11,58 +11,11 @@
   </head>
   <body>
     <%# Header %>
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-          <span><%= link_to "Bookers", top_path %></span>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul
-              class="navbar-nav ml-auto">
-              <%# ログイン後 %>
-              <% if user_signed_in? %>
-                <li>
-                  <%= link_to 'Home', user_path(current_user.id) %>
-                </li>
-                <li>
-                  <%= link_to 'Users', users_path %>
-                </li>
-                <li>
-                  <%= link_to "Books", books_path %>
-                </li>
-                <li>
-                  <%= link_to '投稿フォーム', new_book_path %>
-                </li>
-                <%# <li>
-                  <%= link_to 'マイページ', user_path(current_user.id) 
-                </li> %>
-                <li>
-                  <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-                </li>
-                <li>
-                  <%# ログイン前 %>
-                <% else %>
-                  <li>
-                    Home
-                  </li>
-                  <li>
-                    <%= link_to "新規登録", new_user_registration_path %>
-                  </li>
-                  <li>
-                    <%= link_to "ログイン", new_user_session_path %>
-                  </li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </header>
-      <%# Container %>
-      <div class="container pd-2 px-sm-0">
-        <%= yield %>
-      </div>
-    </body>
+    <%= render 'layouts/nav' %>
+    <%# Container %>
+    <div class="container pd-2 px-sm-0">
+      <%= yield %>
+    </div>
+  </body>
   </body>
 </html>
