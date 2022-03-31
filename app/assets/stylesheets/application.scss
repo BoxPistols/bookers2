@@ -16,6 +16,10 @@
 
 @import "bootstrap";
 
+.wrap {
+  min-height: 80vh;
+}
+
 ul.navbar-nav li {
   padding: 4px 8px;
 }
@@ -27,4 +31,9 @@ ul.navbar-nav li {
       color: var(--blue);
     }
   }
+}
+
+footer {
+  height: 40px;
+  text-align: center;
 }

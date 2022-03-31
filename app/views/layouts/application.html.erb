@@ -9,13 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>    
     <script src="https://kit.fontawesome.com/da63cd6e47.js" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body class="body">
     <%# Header %>
     <%= render 'layouts/nav' %>
     <%# Container %>
-    <div class="container pd-2 px-sm-0">
+    <div class="wrap container pd-2 px-sm-0">
       <%= yield %>
     </div>
-  </body>
+
+    <%= render 'layouts/footer' %>
   </body>
 </html>
