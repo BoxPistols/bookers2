@@ -37,3 +37,20 @@ footer {
   height: 40px;
   text-align: center;
 }
+
+// Flash Message
+.flash {
+  text-align: center;
+  max-width: 80vw;
+  margin: 1vh auto 16px;
+  border-radius: 4px;
+  padding: 8px 16px;
+  &__alert {
+    color: tomato;
+    background-color: pink;
+  }
+  &__notice {
+    color: navy;
+    background-color: skyblue;
+  }
+}

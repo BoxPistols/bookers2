@@ -15,13 +15,14 @@ class BooksController < ApplicationController
     # アソシエーションを設定
     @book.user_id = current_user.id
     if @book.save
+      flash[:notice] = "「#{@book.title}」を投稿しました"
       redirect_to book_path(@book.id)
     else
       render :new
       # redirect_to books_path
     end
   end
-
+  
   def show
     @book = Book.find(params[:id])
   end
@@ -34,17 +35,19 @@ class BooksController < ApplicationController
   def update
     # 変数bookにモデルから探しだしたid/レコードを当てる
     book = Book.find(params[:id])
-    # updateメソッド(ストロングパラメーター)
-    book.update(book_params)
-    # Createと同じ
-    redirect_to book_path(book.id)
+    if book.update(book_params)      
+      redirect_to book_path(book.id), flash: { notice: "「#{book.title}」を編集しました" }
+    else
+      redirect_to books_path
+    end
   end  
-
+  
   # 削除
   def destroy
     book = Book.find(params[:id]) # データ（レコード）を1件取得
     book.destroy  # データ（レコード）を削除
-    redirect_to books_path  # 投稿一覧画面へリダイレクト
+    # 投稿一覧画面へリダイレクト
+    redirect_to books_path, flash: { notice: "「#{book.title}」が削除されました" }
    end
 
   # ストロングパラメーター
