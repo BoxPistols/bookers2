@@ -13,10 +13,10 @@ class UsersController < ApplicationController
   end
   
   # 編集したら保存
-  def update      
+  def update
     @user = User.find(params[:id])
     @user.update(user_params)
-    redirect_to user_path(@user.id)
+    redirect_to user_path(@user.id), flash: { notice: "「#{@user.name}」を編集しました" }    
   end
 
   private
