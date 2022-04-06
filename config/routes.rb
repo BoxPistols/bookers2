@@ -3,7 +3,8 @@ Rails.application.routes.draw do
   # users routing
   resources :users, only: [:index, :show, :edit, :update]
 
-  root to: 'homes#top', as: "top"
+  root 'homes#top'
+
   get 'home/about' => 'homes#about', as: "about"
 
   # get 'books/index'

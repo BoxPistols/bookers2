@@ -7,8 +7,9 @@ class ApplicationController < ActionController::Base
   # ログインしたらBooksにリダイレクトさせる
   def after_sign_in_path_for(resource)
     books_path
+    # users_show_path
   end
-  
+
   protected
 
   def configure_permitted_parameters
