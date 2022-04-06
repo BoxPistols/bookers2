@@ -4,10 +4,15 @@ class ApplicationController < ActionController::Base
   # deviseのヘルパーメソッド名を指定、deviseに関する処理であるときだけ、configure_permitted_parametersメソッドを実行するようにする
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  # ログインしたらBooksにリダイレクトさせる
+  # ログインしたらUser詳細にリダイレクトさせる
   def after_sign_in_path_for(resource)
-    books_path
-    # users_show_path
+    # books_path
+    user_path(resource)
+  end
+
+  # ログアウトしたらTOPにリダイレクトさせる
+  def after_sign_out_path_for(resource)
+    root_path
   end
 
   protected
