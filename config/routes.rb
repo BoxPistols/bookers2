@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   # get 'books/index'
   get 'books' => 'books#index', as: "books"
 
-  # new POST画面
-  get 'books/new' => 'books#new', as: "new_book"
+  # POST
+  # get 'books/new' => 'books#new', as: "new_book"
   post 'books' => 'books#create'
 
   # show 詳細画面

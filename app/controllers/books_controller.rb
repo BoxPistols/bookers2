@@ -13,13 +13,13 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params) # ストロングパラメーター
     # アソシエーションを設定
-    @book.user_id = current_user.id
+    # @book.user_id = current_user.id
     if @book.save
       flash[:notice] = "「#{@book.title}」を投稿しました"
       redirect_to book_path(@book.id)
     else
-      render :new
-      # redirect_to books_path
+      # render :new
+      redirect_to books_path
     end
   end
 
@@ -54,6 +54,6 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:title, :body, :image)
+    params.require(:book).permit(:title, :body)
   end
 end
