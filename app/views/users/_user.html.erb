@@ -1,17 +1,17 @@
 <h2>User info</h2>
 <div class="my-2">
-  <%= attachment_image_tag current_user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "http://placehold.jp/100x100.jpg?text=Profile" %>
+  <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format: 'jpeg', fallback: "http://placehold.jp/100x100.jpg?text=Profile" %>
 </div>
 <table class="table">
   <tbody>
     <tr></tr>
     <tr>
       <th>name</th>
-      <th><%= current_user.name %></th>
+      <th><%= user.name %></th>
     </tr>
     <tr>
       <th>introduction</th>
-      <th><%= current_user.introduction %></th>
+      <th><%= user.introduction %></th>
     </tr>
   </tbody>
 </table>
