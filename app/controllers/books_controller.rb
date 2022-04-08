@@ -31,6 +31,7 @@ class BooksController < ApplicationController
       @books = Book.all
       render :index
       # redirect_to books_path
+      # redirect_to user_path(@user.id)
     end
   end
 
