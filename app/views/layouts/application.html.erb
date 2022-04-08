@@ -8,25 +8,24 @@
         'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/da63cd6e47.js" crossorigin="anonymous"></script>
-
     <%# TODO: Origin %>
-    <%# <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet"> %>
+  <%# <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet"> %>
     <%# <link href="https://bootswatch.com/4/yeti/bootstrap.min.css" rel="stylesheet"> %>
-
   </head>
-  <body class="body">
+  <body
+    class="body">
     <%# Header %>
     <%= render 'layouts/nav' %>
-
     <main>
       <%# Flash Message %>
       <%= render 'layouts/flash', class: "alert" %>
       <%# Container %>
       <div class="wrap container pd-4 mt-4 px-sm-0">
-        <%= yield %>
+        <div class="row">
+          <%= yield %>
+        </div>
       </div>
     </main>
-
     <%= render 'layouts/footer' %>
   </body>
 </html>
