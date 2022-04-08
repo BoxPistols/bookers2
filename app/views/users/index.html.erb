@@ -1,7 +1,7 @@
-<!-- user info -->
 <div class="col-md-3">
-  <%= render 'users/user-info', books: @books %>
+  <%= render 'users/user', user: @user %>
 </div>
+
 <!-- users list -->
 <div class="col-md-8 offset-md-1">
   <h2>Users</h2>
@@ -11,7 +11,7 @@
       <tr>
         <th>image</th>
         <th>name</th>
-        <th>詳細</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -28,7 +28,7 @@
         </td>
         <td>
           <%= link_to user_path(user.id) do%>
-          詳細を見る
+          Show
           <% end %>
         </td>
       </tr>

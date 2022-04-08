@@ -3,7 +3,7 @@ class Book < ApplicationRecord
 
   attachment :image
 
-  validates :title, presence: true, length: { minimum: 2, maximum: 20}
-  validates :body, presence: true, length: { minimum: 2, maximum: 200}
+  validates :title, presence: true, length: { maximum: 20}
+  validates :body, presence: true, length: { maximum: 200}
   validates :image, presence: false
 end

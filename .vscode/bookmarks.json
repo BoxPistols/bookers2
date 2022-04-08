@@ -9,6 +9,16 @@
 					"label": ""
 				}
 			]
+		},
+		{
+			"path": "spec/system/02_after_login_spec.rb",
+			"bookmarks": [
+				{
+					"line": 98,
+					"column": 26,
+					"label": ""
+				}
+			]
 		}
 	]
 }
