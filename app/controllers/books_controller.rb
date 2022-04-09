@@ -39,29 +39,17 @@ class BooksController < ApplicationController
     end
   end
 
-  # def edit
-  #   @book = Book.find(params[:id])
-  # end
 
   def edit
-    if @book.user == current_user
-      @book = Book.find(params[:id])
-    #   redirect_to book_path(@book.id)
-    # else
-      # render :edit, flash: { notice: "error! 「#{book.title}」は編集出来ていません！" }
-    end
+    @book = Book.find(params[:id])
   end
 
-  # 編集したら保存
   def update
-    # 変数bookにモデルから探しだしたid/レコードを当てる
-    book = Book.find(params[:id])
-
-    if book.update(book_params)
-      redirect_to book_path(book.id), flash: { notice: "successfully! 「#{book.title}」を編集しました" }
+    @book = Book.find(params[:id])
+    if @book.update_attributes(book_params)
+      redirect_to book_path(@book.id), flash: { notice: "successfully! 「#{@book.title}」を編集しました" }
     else
-      redirect_to edit_book_path, flash: { notice: "error! 編集出来ていません！" }
-      # render :edit, flash: { notice: "error! 「#{book.title}」は編集出来ていません！" }
+      render 'edit'
     end
   end
 
