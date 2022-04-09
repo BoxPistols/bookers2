@@ -9,6 +9,8 @@ class BooksController < ApplicationController
   def show
     @book = Book.find(params[:id])
     @user = @book.user
+
+    @books = @user.books
   end
 
   # 投稿データの作成
