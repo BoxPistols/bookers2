@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update(user_params)
-      redirect_to user_path(@user.id), flash: { notice: "successfully 「#{@user.name}」を編集しました" }
+      redirect_to user_path(@user.id), flash: { notice: "successfully! 「#{@user.name}」を編集しました" }
     else
       render :edit
     end

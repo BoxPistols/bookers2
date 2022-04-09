@@ -11,6 +11,16 @@
 			]
 		},
 		{
+			"path": "spec/system/03_finishing_touches_spec.rb",
+			"bookmarks": [
+				{
+					"line": 55,
+					"column": 48,
+					"label": ""
+				}
+			]
+		},
+		{
 			"path": "spec/system/02_after_login_spec.rb",
 			"bookmarks": [
 				{
