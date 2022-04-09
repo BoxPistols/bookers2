@@ -60,7 +60,6 @@ class BooksController < ApplicationController
     if book.update(book_params)
       redirect_to book_path(book.id), flash: { notice: "successfully! 「#{book.title}」を編集しました" }
     else
-
       redirect_to edit_book_path, flash: { notice: "error! 編集出来ていません！" }
       # render :edit, flash: { notice: "error! 「#{book.title}」は編集出来ていません！" }
     end
